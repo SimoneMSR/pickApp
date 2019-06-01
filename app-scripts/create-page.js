@@ -17,6 +17,7 @@ var template =
 <script>
 	import page from "./${pageFilename}.js"
 	import "./${pageFilename}.scss"
+	export default page
 </script>
 `
 
