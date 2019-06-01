@@ -1,5 +1,16 @@
 <template>
 <f7-app :params="f7params" >
+    <!-- Top Navbar -->
+    <f7-navbar :sliding="false" large>
+      <f7-nav-left>
+        <f7-link icon-ios="f7:menu" icon-aurora="f7:menu" icon-md="material:menu" panel-open="left"></f7-link>
+      </f7-nav-left>
+      <f7-nav-title sliding>pickApp</f7-nav-title>
+      <f7-nav-right>
+        <f7-link icon-ios="f7:menu" icon-aurora="f7:menu" icon-md="material:menu" panel-open="right"></f7-link>
+      </f7-nav-right>
+      <f7-nav-title-large sliding>pickApp</f7-nav-title-large>
+    </f7-navbar>
   <!-- Status bar overlay for fullscreen mode-->
   <f7-statusbar></f7-statusbar>
 
@@ -28,6 +39,11 @@
   <!-- Your main view, should have "view-main" class -->
   <f7-view main class="safe-areas" url="/"></f7-view>
 
+  <!-- Toolbar-->
+  <f7-toolbar bottom>
+    <f7-link>Left Link</f7-link>
+    <f7-link>Right Link</f7-link>
+  </f7-toolbar>
 
   <!-- Popup -->
   <f7-popup id="my-popup">
@@ -98,7 +114,6 @@
 
             };
           },
-
           // App routes
           routes: routes,
 
@@ -117,6 +132,13 @@
             overlay: this.$device.cordova && this.$device.ios || 'auto',
             iosOverlaysWebView: true,
             androidOverlaysWebView: false,
+          },
+          view : {
+            pushState: true,
+            preloadPreviousPage : false
+          },
+          panel : {
+            swipe : 'left'
           },
         },
 
