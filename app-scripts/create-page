@@ -1,6 +1,0 @@
-const  mkdir = require('mkdirp')
-const touch = require('touch')
-var child = mkdir("src\\pages\\"+process.argv[2]);
-var child = touch("src\\pages\\"+process.argv[2]+"\\"+process.argv[2]+".vue");
-var child = touch("src\\pages\\"+process.argv[2]+"\\"+process.argv[2]+".scss");
-var child = touch("src\\pages\\"+process.argv[2]+"\\"+process.argv[2]+".ts");

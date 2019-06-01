@@ -1,8 +1,8 @@
-export class SodexoPage {
+export class BasePage {
 
 
 	static loginGuard(to,from,resolve, reject){
-        if(SodexoPage.isLoggedIn())
+        if(BasePage.isLoggedIn())
             resolve(to.path)
         else{
             reject();
@@ -11,7 +11,7 @@ export class SodexoPage {
     }
 
     static redirectToDashboard(to,from,resolve, reject){
-        if(SodexoPage.isLoggedIn())
+        if(BasePage.isLoggedIn())
             resolve("/dashboard/");
         else
             resolve(to.path)
@@ -36,7 +36,7 @@ export class SodexoPage {
 		};
 		this.data = function(){
 			return {
-
+				name : "page"
 			}
 		},
 		this.mounted = function(){
